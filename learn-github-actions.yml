@@ -1,0 +1,9 @@
+name: learn-github-actions
+run-name: sami is learning GitHub Actions
+on: push
+jobs:
+  my-job:
+    runs-on: self-hosted
+    steps:
+      - name: my-step
+        run: echo "Hello World!"
