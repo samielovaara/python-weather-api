@@ -1,0 +1,9 @@
+name: pylint
+run-name: sami is pylinting
+on: push
+jobs:
+  pylint-job:
+    runs-on: self-hosted
+    steps:
+      - name: my-step
+        run: pylint main.py
