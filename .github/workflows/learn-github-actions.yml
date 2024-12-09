@@ -7,3 +7,8 @@ jobs:
     steps:
       - name: my-step
         run: pylint main.py
+  unit-test-job:
+    runs-on: self-hosted
+    steps:
+      - name: my-step
+        run: python -m unittest test_main.py 
