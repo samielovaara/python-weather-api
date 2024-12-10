@@ -1,5 +1,5 @@
-name: pylint
-run-name: sami is pylinting
+name: jobs jobs
+run-name: samis jobs
 on: push
 jobs:
   debug-job:
@@ -9,8 +9,8 @@ jobs:
         run: |
           which pylint
           pylint --version
-          python --version
-          python -m unittest --help
+          python3 --version
+          python3 -m unittest --help
   pylint-job:
     runs-on: self-hosted
     steps:
