@@ -11,6 +11,9 @@ jobs:
           pylint --version
           python3 --version
           python3 -m unittest --help
+      - name: List files
+        run: ls -l
+
   pylint-job:
     runs-on: self-hosted
     steps:
