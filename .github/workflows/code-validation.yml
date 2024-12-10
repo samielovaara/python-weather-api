@@ -1,5 +1,5 @@
-name: Validate Code for Commit ${{ github.sha }}
-run-name: code validation for ${{ github.event_name }}
+name: run lint and unittest
+run-name: code validation for ${{ github.event_name }} ${{ github.sha }}
 on: push
 jobs:
   check-dependencies:
