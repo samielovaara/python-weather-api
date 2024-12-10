@@ -2,6 +2,15 @@ name: pylint
 run-name: sami is pylinting
 on: push
 jobs:
+  debug-job:
+    runs-on: self-hosted
+    steps:
+      - name: Check environment
+        run: |
+          which pylint
+          pylint --version
+          python --version
+          python -m unittest --help
   pylint-job:
     runs-on: self-hosted
     steps:
@@ -12,3 +21,4 @@ jobs:
     steps:
       - name: my-step
         run: python -m unittest test_main.py 
+  
