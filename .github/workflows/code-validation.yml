@@ -1,8 +1,8 @@
-name: jobs jobs
-run-name: samis jobs
+name: Validate Code for Commit ${{ github.sha }}
+run-name: code validation for ${{ github.event_name }}
 on: push
 jobs:
-  debug-job:
+  check-dependencies:
     runs-on: self-hosted
     steps:
       - name: Check environment
@@ -11,13 +11,11 @@ jobs:
           pylint --version
           python3 --version
           python3 -m unittest --help
-      - name: List files
-        run: ls -l
-      - name: Checkout code
-        uses: actions/checkout@v3
   pylint-job:
     runs-on: self-hosted
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: run pylint
         run: pylint src/main.py
   unit-test-job:
