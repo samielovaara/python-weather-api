@@ -4,7 +4,7 @@ from unittest.mock import patch
 import requests
 
 
-from main import to_celcius, weather_in
+from src.main import to_celcius, weather_in
 
 class TestCalculations(unittest.TestCase):
 
