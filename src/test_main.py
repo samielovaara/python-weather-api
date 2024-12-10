@@ -4,7 +4,7 @@ from unittest.mock import patch
 import requests
 
 
-from main import to_celcius, weather_in
+from src.main import to_celcius, weather_in
 
 class TestCalculations(unittest.TestCase):
 
@@ -35,7 +35,7 @@ class TestWeatherIn(unittest.TestCase):
             f"https://api.openweathermap.org/data/2.5/weather?"
             f"lat={lat}&lon={lon}&appid={fake_key}"
         )
-        mock_get.assert_called_once_with(expected_url)  # Verify the URL
+        mock_get.assert_called_once_with(expected_url, timeout=10)  # Verify the URL ?
         self.assertEqual(result, {"weather": "test_weather"})  # Verify the response
     
     @patch("requests.get")  # Mock the requests.get method

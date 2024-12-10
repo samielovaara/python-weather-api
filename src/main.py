@@ -38,7 +38,7 @@ def get_coordinates(city: str)->tuple:
 def weather_in(lat, lon, key):
     # get weather info from url
     url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={key}"
-    response = requests.get(url)
+    response = requests.get(url, timeout=10)
     response.raise_for_status()
 
     return response.json()
