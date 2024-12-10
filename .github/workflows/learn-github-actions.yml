@@ -19,10 +19,10 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: run pylint
-        run: pylint main.py
+        run: pylint src/main.py
   unit-test-job:
     runs-on: self-hosted
     steps:
       - name: run unittest
-        run: python3 -m unittest test_main.py 
+        run: python3 -m unittest src/test_main.py 
   
