@@ -26,5 +26,5 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: run unittest
-        run: python -m unittest test_main.py 
+        run: python3 -m unittest test_main.py 
   
