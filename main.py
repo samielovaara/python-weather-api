@@ -64,7 +64,7 @@ def print_weather_data(data):
     except KeyError as e:
         print(f"KeyError: {e}")
 
-    # jos haluaa tulostaa koko datan
+    # jos haluaa tulostaa koko datan, printtaa:
     #print(json.dumps(data, indent=4))
 
 
