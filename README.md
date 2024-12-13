@@ -3,6 +3,3 @@
 ## linter
 
 `pylint main.py`
-
-
-

@@ -4,7 +4,7 @@ from unittest.mock import patch
 import requests
 
 
-from src.main import to_celcius, weather_in
+from src.main import to_celcius, get_weather_data
 
 class TestCalculations(unittest.TestCase):
 
@@ -28,7 +28,7 @@ class TestWeatherIn(unittest.TestCase):
         mock_get.return_value = mock_response
 
         # Act
-        result = weather_in(lat, lon, fake_key)
+        result = get_weather_data(lat, lon, fake_key)
 
         # Assert
         expected_url = (
@@ -52,5 +52,5 @@ class TestWeatherIn(unittest.TestCase):
 
         # Act & Assert
         with self.assertRaises(requests.exceptions.HTTPError) as context:
-            weather_in(lat, lon, fake_key)
+            get_weather_data(lat, lon, fake_key)
         self.assertIn("Test HTTP error", str(context.exception))

@@ -10,6 +10,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip install -r --no-cache-dir requirements.txt
+    COPY requirements.txt requirements.txt
+    RUN pip install -r --no-cache-dir requirements.txt
 
 ENTRYPOINT ["bash"]
